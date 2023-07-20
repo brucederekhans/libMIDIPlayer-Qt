@@ -5,7 +5,7 @@
 #include <mmsystem.h>
 
 struct QMIDI{
-	//
+	unsigned char isPlaying;
 };
 
 #endif
