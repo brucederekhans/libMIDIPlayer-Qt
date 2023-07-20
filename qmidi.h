@@ -6,6 +6,8 @@
 
 struct QMIDI{
 	unsigned char isPlaying;
+	unsigned short countTracks;
+	unsigned short countTicks;
 };
 
 #endif
