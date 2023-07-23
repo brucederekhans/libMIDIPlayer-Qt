@@ -7,6 +7,7 @@
 struct QMIDI{
 	unsigned char isPlaying;
 	unsigned char isPaused;
+	unsigned char isStopRequested;
 	unsigned short countTracks;
 	unsigned short countTicks;
 	unsigned int tempo;
