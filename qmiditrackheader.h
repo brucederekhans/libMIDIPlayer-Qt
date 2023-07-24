@@ -4,7 +4,7 @@
 #include <windows.h>
 
 struct QMIDITrackHeader{
-	//
+	unsigned int length;
 };
 
 #endif
