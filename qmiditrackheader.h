@@ -3,4 +3,8 @@
 
 #include <windows.h>
 
+struct QMIDITrackHeader{
+	//
+};
+
 #endif
