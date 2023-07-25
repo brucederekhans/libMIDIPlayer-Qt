@@ -6,6 +6,7 @@
 struct QMIDITrackHeader{
 	unsigned int length;
 	unsigned char * data;
+	unsigned char * pData;
 };
 
 #endif
