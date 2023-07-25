@@ -5,6 +5,7 @@
 
 struct QMIDITrackHeader{
 	unsigned int length;
+	unsigned char * data;
 };
 
 #endif
