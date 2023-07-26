@@ -8,6 +8,7 @@ struct QMIDITrackHeader{
 	unsigned int length;
 	unsigned char * data;
 	unsigned char * pData;
+	double triggerTime;
 };
 
 #endif
