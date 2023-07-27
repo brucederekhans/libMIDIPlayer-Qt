@@ -10,6 +10,9 @@ class QMIDIPlaying : public QObject
 public:
     explicit QMIDIPlaying(QObject * parent = nullptr);
     ~QMIDIPlaying();
+
+private:
+    char filename[MAX_PATH];
 };
 
 #endif
