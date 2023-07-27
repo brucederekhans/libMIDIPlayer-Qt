@@ -4,4 +4,12 @@
 #include "qmidi.h"
 #include "qmiditrackheader.h"
 
+class QMIDIPlaying : public QObject
+{
+    Q_OBJECT
+public:
+    explicit QMIDIPlaying(QObject * parent = nullptr);
+    ~QMIDIPlaying();
+};
+
 #endif
