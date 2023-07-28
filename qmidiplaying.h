@@ -8,7 +8,7 @@ class QMIDIPlaying : public QObject
 {
     Q_OBJECT
 public:
-    explicit QMIDIPlaying(char * pFilename, QObject * parent = nullptr);
+    explicit QMIDIPlaying(char * pFilename, unsigned char AVolumePercentage, QObject * parent = nullptr);
     ~QMIDIPlaying();
 
 private:

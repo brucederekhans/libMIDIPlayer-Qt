@@ -1,7 +1,8 @@
 #include "qmidiplaying.h"
 
-QMIDIPlaying::QMIDIPlaying(char * pFilename, QObject * parent) :
-    QObject(parent)
+QMIDIPlaying::QMIDIPlaying(char * pFilename, unsigned char AVolumePercentage, QObject * parent) :
+    QObject(parent),
+    volumePercentage(AVolumePercentage)
 {
     strcpy(this->filename, pFilename);
 }
