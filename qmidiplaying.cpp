@@ -8,6 +8,17 @@ QMIDIPlaying::QMIDIPlaying(char * pFilename, unsigned char AVolumePercentage, QO
     isTrackHeadersValid(false)
 {
     strcpy(this->filename, pFilename);
+    unsigned long long i, countMIDIOutDevices = midiOutGetNumDevs();
+    for(i = 0; i < countMIDIOutDevices; i++)
+    {
+        MIDIOUTCAPS midiOutCaps;
+        if(midiOutGetDevCaps(i, &midiOutCaps, sizeof(MIDIOUTCAPS)) == MMSYSERR_NOERROR)
+        {
+            this->selectedOuputDeviceIndex = i;
+            this->isSelectedOuputDeviceValid = true;
+            break;
+        }
+    }
 }
 
 QMIDIPlaying::~QMIDIPlaying()
