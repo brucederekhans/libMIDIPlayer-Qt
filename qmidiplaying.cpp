@@ -2,7 +2,10 @@
 
 QMIDIPlaying::QMIDIPlaying(char * pFilename, unsigned char AVolumePercentage, QObject * parent) :
     QObject(parent),
-    volumePercentage(AVolumePercentage)
+    volumePercentage(AVolumePercentage),
+    selectedOuputDeviceIndex(0),
+    isSelectedOuputDeviceValid(false),
+    isTrackHeadersValid(false)
 {
     strcpy(this->filename, pFilename);
 }
