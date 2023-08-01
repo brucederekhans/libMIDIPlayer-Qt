@@ -28,7 +28,7 @@ QMIDIPlaying::~QMIDIPlaying()
 
 void QMIDIPlaying::execute()
 {
-    //
+    memset(&this->midi, 0, sizeof(QMIDI));
 
     emit this->finished();
 }
