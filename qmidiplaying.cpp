@@ -30,5 +30,15 @@ void QMIDIPlaying::execute()
 {
     memset(&this->midi, 0, sizeof(QMIDI));
 
+    if(this->isSelectedOuputDeviceValid)
+    {
+        FILE * pMIDIFile;
+        fopen_s(&pMIDIFile, this->filename, "rb");
+        if(pMIDIFile != nullptr)
+        {
+            fclose(pMIDIFile);
+        }
+    }
+
     emit this->finished();
 }
