@@ -22,4 +22,7 @@ private:
     QMIDITrackHeader * pMIDITrackHeaders;
 };
 
+public slots:
+    void execute();
+
 #endif

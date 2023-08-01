@@ -25,3 +25,8 @@ QMIDIPlaying::~QMIDIPlaying()
 {
     //
 }
+
+void QMIDIPlaying::execute()
+{
+    //
+}
