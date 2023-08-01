@@ -29,4 +29,6 @@ QMIDIPlaying::~QMIDIPlaying()
 void QMIDIPlaying::execute()
 {
     //
+
+    emit this->finished();
 }
