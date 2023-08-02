@@ -18,7 +18,6 @@ private:
     bool isSelectedOuputDeviceValid;
     bool isTrackHeadersValid;
     HMIDIOUT hMIDIOut;
-    QMIDI midi;
 };
 
 signals:
