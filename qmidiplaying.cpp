@@ -28,8 +28,6 @@ QMIDIPlaying::~QMIDIPlaying()
 
 void QMIDIPlaying::execute()
 {
-    memset(&this->midi, 0, sizeof(QMIDI));
-
     if(this->isSelectedOuputDeviceValid)
     {
         FILE * pMIDIFile;
