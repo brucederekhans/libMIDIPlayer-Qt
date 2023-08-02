@@ -19,7 +19,6 @@ private:
     bool isTrackHeadersValid;
     HMIDIOUT hMIDIOut;
     QMIDI midi;
-    QMIDITrackHeader * pMIDITrackHeaders;
 };
 
 signals:
