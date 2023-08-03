@@ -34,6 +34,9 @@ void QMIDIPlaying::execute()
         fopen_s(&pMIDIFile, this->filename, "rb");
         if(pMIDIFile != nullptr)
         {
+            QMIDI midi;
+            memset(&midi, 0, sizeof(QMIDI));
+
             fclose(pMIDIFile);
         }
     }
