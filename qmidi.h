@@ -16,4 +16,6 @@ struct QMIDI{
 	double currentTime;
 };
 
+extern const char MThd[5];
+
 #endif
