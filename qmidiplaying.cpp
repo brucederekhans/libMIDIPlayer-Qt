@@ -37,6 +37,7 @@ void QMIDIPlaying::execute()
             QMIDI midi;
             memset(&midi, 0, sizeof(QMIDI));
             unsigned char t4Bytes[4];
+            fread(t4Bytes, 1, 4, pMIDIFile);
 
             fclose(pMIDIFile);
         }
