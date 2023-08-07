@@ -18,7 +18,7 @@ struct QMIDI{
 
 extern const char MThd[5];
 
-unsigned short readUShortFromMIDIFile(FILE * pMIDIFile);
+unsigned long long readUShortFromMIDIFile(unsigned short * pDst, FILE * pMIDIFile);
 unsigned int readUIntFromMIDIFile(FILE * pMIDIFile);
 
 #endif
