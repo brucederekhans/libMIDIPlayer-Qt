@@ -54,7 +54,7 @@ void QMIDIPlaying::execute()
             }
             catch(int errCode)
             {
-                //
+                fclose(pMIDIFile);
             }
         }
     }
