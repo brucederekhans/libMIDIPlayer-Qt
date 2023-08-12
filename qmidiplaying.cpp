@@ -44,11 +44,13 @@ void QMIDIPlaying::execute()
                     throw -1;
                 }
 
-                if(!memcmp(t4Bytes, MThd, 4))
+                if(memcmp(t4Bytes, MThd, 4))
                 {
-                    fseek(pMIDIFile, 6, SEEK_CUR);
-                    readUShortFromMIDIFile(&midi.countTracks, pMIDIFile);
+                    throw -2;
                 }
+
+                fseek(pMIDIFile, 6, SEEK_CUR);
+                readUShortFromMIDIFile(&midi.countTracks, pMIDIFile);
 
                 fclose(pMIDIFile);
             }
