@@ -49,7 +49,11 @@ void QMIDIPlaying::execute()
                     throw -2;
                 }
 
-                fseek(pMIDIFile, 6, SEEK_CUR);
+                if(fseek(pMIDIFile, 6, SEEK_CUR) != 0)
+                {
+                    throw -3;
+                }
+
                 readUShortFromMIDIFile(&midi.countTracks, pMIDIFile);
 
                 fclose(pMIDIFile);
