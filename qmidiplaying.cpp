@@ -59,6 +59,11 @@ void QMIDIPlaying::execute()
                     throw -4;
                 }
 
+                if(readUShortFromMIDIFile(&midi.countTicks, pMIDIFile) != 2)
+                {
+                    throw -5;
+                }
+
                 fclose(pMIDIFile);
             }
             catch(int errCode)
