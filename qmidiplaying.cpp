@@ -67,7 +67,11 @@ void QMIDIPlaying::execute()
                 unsigned short iTrack = 0;
                 while(!feof(pMIDIFile))
                 {
-                    //
+                    unsigned char t4Bytes[4];
+                    if(fread(t4Bytes, 1, 4, pMIDIFile) != 4)
+                    {
+                        throw -6;
+                    }
                 }
 
                 fclose(pMIDIFile);
