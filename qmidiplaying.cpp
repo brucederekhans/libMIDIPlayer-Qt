@@ -64,6 +64,7 @@ void QMIDIPlaying::execute()
                     throw -5;
                 }
 
+                QMIDITrackHeader * midiTrackHeaders = new QMIDITrackHeader[midi.countTracks];
                 unsigned short iTrack = 0;
                 while(!feof(pMIDIFile))
                 {
