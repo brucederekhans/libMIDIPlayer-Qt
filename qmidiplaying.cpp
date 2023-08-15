@@ -77,6 +77,7 @@ void QMIDIPlaying::execute()
                         }
                     }
                 }
+                this->isTrackHeadersValid = true;
 
                 fclose(pMIDIFile);
             }
