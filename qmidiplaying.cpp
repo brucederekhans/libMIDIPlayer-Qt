@@ -36,6 +36,7 @@ void QMIDIPlaying::execute()
         {
             QMIDI midi;
             memset(&midi, 0, sizeof(QMIDI));
+            QMIDITrackHeader * midiTrackHeaders;
             try
             {
                 unsigned char t4Bytes[4];
@@ -64,7 +65,7 @@ void QMIDIPlaying::execute()
                     throw -5;
                 }
 
-                QMIDITrackHeader * midiTrackHeaders = new QMIDITrackHeader[midi.countTracks];
+                midiTrackHeaders = new QMIDITrackHeader[midi.countTracks];
                 try
                 {
                     unsigned short iTrack = 0;
