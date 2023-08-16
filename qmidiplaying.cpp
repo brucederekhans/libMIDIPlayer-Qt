@@ -34,10 +34,10 @@ void QMIDIPlaying::execute()
         fopen_s(&pMIDIFile, this->filename, "rb");
         if(pMIDIFile != nullptr)
         {
+            QMIDI midi;
+            memset(&midi, 0, sizeof(QMIDI));
             try
             {
-                QMIDI midi;
-                memset(&midi, 0, sizeof(QMIDI));
                 unsigned char t4Bytes[4];
                 if(fread(t4Bytes, 1, 4, pMIDIFile) != 4)
                 {
