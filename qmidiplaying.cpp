@@ -83,7 +83,7 @@ void QMIDIPlaying::execute()
                 }
                 catch(int errCode)
                 {
-                    //
+                    delete []midiTrackHeaders;
                 }
 
                 fclose(pMIDIFile);
