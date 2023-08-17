@@ -78,6 +78,11 @@ void QMIDIPlaying::execute()
                             {
                                 throw -6;
                             }
+
+                            if(readUIntFromMIDIFile(midiTrackHeaders[iTrack].length, pMIDIFile) != 4)
+                            {
+                                throw -7;
+                            }
                         }
                     }
                     this->isTrackHeadersValid = true;
