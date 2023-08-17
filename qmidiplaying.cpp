@@ -79,6 +79,8 @@ void QMIDIPlaying::execute()
                                 throw -6;
                             }
 
+                            midiTrackHeaders[iTrack].isEnabled = 1;
+
                             if(readUIntFromMIDIFile(midiTrackHeaders[iTrack].length, pMIDIFile) != 4)
                             {
                                 throw -7;
