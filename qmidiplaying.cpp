@@ -85,6 +85,8 @@ void QMIDIPlaying::execute()
                             {
                                 throw -7;
                             }
+
+                            midiTrackHeaders[iTrack].data = new unsigned char[midiTrackHeaders[iTrack].length];
                         }
                     }
                     this->isTrackHeadersValid = true;
