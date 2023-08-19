@@ -95,6 +95,7 @@ void QMIDIPlaying::execute()
 
                             midiTrackHeaders[iTrack].pData = midiTrackHeaders[iTrack].data;
                             midiTrackHeaders[iTrack].tickDuration = 0;
+                            midiTrackHeaders[iTrack].triggerTime = 0;
                         }
                     }
                     this->isTrackHeadersValid = true;
