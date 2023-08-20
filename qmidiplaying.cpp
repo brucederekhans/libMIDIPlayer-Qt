@@ -110,6 +110,8 @@ void QMIDIPlaying::execute()
                 }
 
                 fclose(pMIDIFile);
+
+                HMIDIOUT hMIDIOut;
             }
             catch(int errCode)
             {
