@@ -102,6 +102,7 @@ void QMIDIPlaying::execute()
                         }
                     }
                     this->isTrackHeadersValid = true;
+                    midi.countTracks = iTrack;
                 }
                 catch(int errCode)
                 {
