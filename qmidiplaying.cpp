@@ -115,6 +115,7 @@ void QMIDIPlaying::execute()
                 if(midiOutOpen(&hMIDIOut, static_cast<unsigned int>(this->selectedOuputDeviceIndex), 0, 0, 0) == MMSYSERR_NOERROR)
                 {
                     midi.isPlaying = 1;
+                    midi.tempo = 1000;
                 }
             }
             catch(int errCode)
