@@ -50,3 +50,11 @@ unsigned long long readUIntFromMIDIFile(unsigned int * pDst, FILE * pMIDIFile)
     (*pDst) = static_cast<unsigned int>((hi2Bytes << 16) + lo2Bytes);
     return 4;
 }
+
+double getHighResolutionTime()
+{
+    timeBeginPeriod(1);
+    double highResolutionTime = static_cast<double>(timeGetTime());
+    timeEndPeriod(1);
+    return highResolutionTime;
+}
