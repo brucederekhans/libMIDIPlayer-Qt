@@ -117,6 +117,8 @@ void QMIDIPlaying::execute()
                     midi.isPlaying = 1;
                     midi.tempo = 1000;
                     midi.tickLength = midi.tempo * 1.0 / midi.countTicks;
+
+                    double tCurrentTime = getHighResolutionTime();
                 }
             }
             catch(int errCode)
