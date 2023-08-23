@@ -80,6 +80,7 @@ void QMIDIPlaying::execute()
                             }
 
                             midiTrackHeaders[iTrack].isEnabled = 1;
+                            midiTrackHeaders[iTrack].isReadOnce = 0;
 
                             if(readUIntFromMIDIFile(midiTrackHeaders[iTrack].length, pMIDIFile) != 4)
                             {
