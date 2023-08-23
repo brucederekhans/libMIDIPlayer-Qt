@@ -5,6 +5,7 @@
 
 struct QMIDITrackHeader{
 	unsigned char isEnabled;
+	unsigned char isReadOnce;
 	unsigned int length;
 	unsigned char * data;
 	unsigned char * pData;
