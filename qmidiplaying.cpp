@@ -121,6 +121,11 @@ void QMIDIPlaying::execute()
 
                     double tCurrentTime = getHighResolutionTime();
                     midi.currentTime = tCurrentTime;
+
+                    while(!midi.isStopRequested)
+                    {
+                        //
+                    }
                 }
             }
             catch(int errCode)
