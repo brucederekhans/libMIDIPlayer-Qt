@@ -124,7 +124,7 @@ void QMIDIPlaying::execute()
 
                     while(!midi.isStopRequested)
                     {
-                        //
+                        tCurrentTime = getHighResolutionTime();
                     }
                 }
             }
