@@ -126,6 +126,7 @@ void QMIDIPlaying::execute()
                     {
                         tCurrentTime = getHighResolutionTime();
                         double nextTriggerTime = tCurrentTime + 1000;
+                        unsigned char isAnyTrackEnabled = 0;
                     }
                 }
             }
