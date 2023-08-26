@@ -137,6 +137,10 @@ void QMIDIPlaying::execute()
                                 {
                                     //
                                 }
+                                else
+                                {
+                                    midiTrackHeaders[iTrack].isEnabled = 0;
+                                }
                             }
                         }
                     }
