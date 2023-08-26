@@ -130,7 +130,10 @@ void QMIDIPlaying::execute()
                         unsigned short iTrack;
                         for(iTrack = 0; iTrack < midi.countTracks; iTrack++)
                         {
-                            //
+                            if(midiTrackHeaders[iTrack].isEnabled)
+                            {
+                                isAnyTrackEnabled = 1;
+                            }
                         }
                     }
                 }
