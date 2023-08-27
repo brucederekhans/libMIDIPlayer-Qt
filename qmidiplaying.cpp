@@ -138,6 +138,7 @@ void QMIDIPlaying::execute()
                                     if(midiTrackHeaders[iTrack].isReadOnce)
                                     {
                                         midiTrackHeaders[iTrack].isReadOnce = 0;
+                                        midiTrackHeaders[iTrack].tickDuration = readVLQFromMIDITrackHeader(&midiTrackHeaders[iTrack]) * midi.tickLength;
                                     }
                                 }
                                 else
