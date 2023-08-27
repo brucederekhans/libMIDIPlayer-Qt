@@ -14,4 +14,6 @@ struct QMIDITrackHeader{
 	unsigned char lastCommand;
 };
 
+unsigned int readVLQFromMIDITrackHeader(QMIDITrackHeader * pMIDITrackHeader);
+
 #endif
