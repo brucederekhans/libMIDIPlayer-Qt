@@ -95,7 +95,7 @@ void QMIDIPlaying::execute()
                             }
 
                             midiTrackHeaders[iTrack].pData = midiTrackHeaders[iTrack].data;
-                            midiTrackHeaders[iTrack].tickDuration = 0;
+                            midiTrackHeaders[iTrack].deltaTime = 0;
                             midiTrackHeaders[iTrack].triggerTime = 0;
                             midiTrackHeaders[iTrack].lastCommand = 0;
 
@@ -138,7 +138,7 @@ void QMIDIPlaying::execute()
                                     if(midiTrackHeaders[iTrack].isReadOnce)
                                     {
                                         midiTrackHeaders[iTrack].isReadOnce = 0;
-                                        midiTrackHeaders[iTrack].tickDuration = readVLQFromMIDITrackHeader(&midiTrackHeaders[iTrack]) * midi.tickLength;
+                                        midiTrackHeaders[iTrack].deltaTime = readVLQFromMIDITrackHeader(&midiTrackHeaders[iTrack]) * midi.tickLength;
                                     }
                                 }
                                 else
