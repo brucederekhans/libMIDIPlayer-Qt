@@ -139,6 +139,7 @@ void QMIDIPlaying::execute()
                                     {
                                         midiTrackHeaders[iTrack].isReadOnce = 0;
                                         midiTrackHeaders[iTrack].deltaTime = readVLQFromMIDITrackHeader(&midiTrackHeaders[iTrack]) * midi.tickLength;
+                                        midiTrackHeaders[iTrack].triggerTime = tCurrentTime + midiTrackHeaders[iTrack].deltaTime;
                                     }
                                 }
                                 else
