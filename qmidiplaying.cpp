@@ -145,6 +145,8 @@ void QMIDIPlaying::execute()
                                     while(tCurrentTime >= midiTrackHeaders[iTrack].triggerTime)
                                     {
                                         midi.currentTime = tCurrentTime;
+
+                                        unsigned char command = readByteFromMIDITrackHeader(&midiTrackHeaders[iTrack]);
                                     }
                                 }
                                 else
