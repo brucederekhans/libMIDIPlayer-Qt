@@ -144,7 +144,7 @@ void QMIDIPlaying::execute()
 
                                     while(tCurrentTime >= midiTrackHeaders[iTrack].triggerTime)
                                     {
-                                        //
+                                        midi.currentTime = tCurrentTime;
                                     }
                                 }
                                 else
