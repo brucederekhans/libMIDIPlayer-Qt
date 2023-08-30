@@ -156,6 +156,11 @@ void QMIDIPlaying::execute()
                                         {
                                             midiTrackHeaders[iTrack].lastCommand = command;
                                         }
+
+                                        if(command == 0xFF)
+                                        {
+                                            command = readByteFromMIDITrackHeader(&midiTrackHeaders[iTrack]);
+                                        }
                                     }
                                 }
                                 else
