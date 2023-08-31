@@ -161,6 +161,10 @@ void QMIDIPlaying::execute()
                                         {
                                             command = readByteFromMIDITrackHeader(&midiTrackHeaders[iTrack]);
                                             unsigned int tLength = readVLQFromMIDITrackHeader(&midiTrackHeaders[iTrack]);
+                                            if(tLength <= (midiTrackHeaders[iTrack].pData - midiTrackHeaders[iTrack].data + midiTrackHeaders[iTrack].length))
+                                            {
+                                                //
+                                            }
                                         }
                                     }
                                 }
