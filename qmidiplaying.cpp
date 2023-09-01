@@ -165,7 +165,7 @@ void QMIDIPlaying::execute()
                                             {
                                                 if(command == 0x0)
                                                 {
-                                                    readUShortFromMIDITrackHeader(&midiTrackHeaders[iTrack]);
+                                                    midiTrackHeaders[iTrack].pData += 2;
                                                 }
                                             }
                                         }
