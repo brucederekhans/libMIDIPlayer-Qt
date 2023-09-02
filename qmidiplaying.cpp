@@ -175,6 +175,10 @@ void QMIDIPlaying::execute()
                                                 {
                                                     midiTrackHeaders[iTrack].pData++;
                                                 }
+                                                else if(command == 0x21)
+                                                {
+                                                    midiTrackHeaders[iTrack].pData++;
+                                                }
                                             }
                                         }
                                     }
