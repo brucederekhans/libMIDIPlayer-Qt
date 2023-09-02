@@ -183,6 +183,12 @@ void QMIDIPlaying::execute()
                                                 {
                                                     midiTrackHeaders[iTrack].isEnabled = 0;
                                                 }
+                                                else if(command == 0x51)
+                                                {
+                                                    unsigned char t3Bytes[3];
+                                                    memcpy(t3Bytes, midiTrackHeaders[iTrack].pData, 3);
+                                                    midiTrackHeaders[iTrack].pData += 3;
+                                                }
                                             }
                                         }
                                     }
