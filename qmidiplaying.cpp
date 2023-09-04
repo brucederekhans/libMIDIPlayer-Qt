@@ -202,6 +202,10 @@ void QMIDIPlaying::execute()
                                                         }
                                                     }
                                                 }
+                                                else if(command == 0x54)
+                                                {
+                                                    midiTrackHeaders[iTrack].pData += 5;
+                                                }
                                             }
                                         }
                                     }
