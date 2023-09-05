@@ -210,6 +210,10 @@ void QMIDIPlaying::execute()
                                                 {
                                                     midiTrackHeaders[iTrack].pData += 4;
                                                 }
+                                                else if(command == 0x59)
+                                                {
+                                                    midiTrackHeaders[iTrack].pData += 2;
+                                                }
                                             }
                                         }
                                     }
