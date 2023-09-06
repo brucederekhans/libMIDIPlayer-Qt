@@ -17,12 +17,14 @@ private:
     unsigned long long selectedOuputDeviceIndex;
     bool isSelectedOuputDeviceValid;
     bool isTrackHeadersValid;
-};
 
 signals:
     void finished();
 
 public slots:
     void execute();
+};
+
+#define HI_NYBBLE(byte) (((byte) & 0xF0) >> 4)
 
 #endif
