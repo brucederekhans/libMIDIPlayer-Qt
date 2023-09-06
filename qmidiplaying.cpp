@@ -224,6 +224,10 @@ void QMIDIPlaying::execute()
                                                 }
                                             }
                                         }
+                                        else
+                                        {
+                                            unsigned char hiNybble = HI_NYBBLE(command);
+                                        }
                                     }
                                 }
                                 else
