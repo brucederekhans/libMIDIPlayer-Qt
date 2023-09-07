@@ -231,6 +231,7 @@ void QMIDIPlaying::execute()
                                             if(hiNybble == 0x08)
                                             {
                                                 unsigned char key = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
+                                                unsigned char velocity = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
                                             }
                                         }
                                     }
