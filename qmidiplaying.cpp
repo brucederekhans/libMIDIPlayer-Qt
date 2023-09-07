@@ -227,6 +227,7 @@ void QMIDIPlaying::execute()
                                         else
                                         {
                                             unsigned char hiNybble = HI_NYBBLE(command);
+                                            unsigned char loNybble = LO_NYBBLE(command);
                                         }
                                     }
                                 }
