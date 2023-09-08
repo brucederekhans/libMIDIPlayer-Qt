@@ -58,3 +58,14 @@ double getHighResolutionTime()
     timeEndPeriod(1);
     return highResolutionTime;
 }
+
+void setNoteOn(unsigned char note, unsigned char velocity, unsigned char velocityPercentage, unsigned char channelIndex, QMIDI * pMIDI, HMIDIOUT * pHMIDIOut)
+{
+    velocity = static_cast<unsigned char>(velocity * velocityPercentage / 100.0);
+    pMIDI->channels[channelIndex][note] = velocity;
+
+    if(*pHMIDIOut)
+    {
+        midiOutShortMsg(*pHMIDIOut, static_cast<DWORD>(MAKELONG(MAKEWORD(MAKEBYTE(channelIndex, 9), note), MAKEWORD(velocity, 0))));
+    }
+}
