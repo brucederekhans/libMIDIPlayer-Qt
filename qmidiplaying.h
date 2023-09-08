@@ -25,7 +25,4 @@ public slots:
     void execute();
 };
 
-#define HI_NYBBLE(byte) (((byte) & 0xF0) >> 4)
-#define LO_NYBBLE(byte) ((byte) & 0x0F)
-
 #endif
