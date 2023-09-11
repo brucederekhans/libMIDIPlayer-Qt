@@ -240,6 +240,10 @@ void QMIDIPlaying::execute()
                                                 unsigned char velocity = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
                                                 setNoteOnOff(1, key, velocity, this->volumePercentage, loNybble, &midi, &hMIDIOut);
                                             }
+                                            else if(hiNybble == 0x0A)
+                                            {
+                                                unsigned char key = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
+                                            }
                                         }
                                     }
                                 }
