@@ -243,6 +243,7 @@ void QMIDIPlaying::execute()
                                             else if(hiNybble == 0x0A)
                                             {
                                                 unsigned char key = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
+                                                unsigned char touch = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
                                             }
                                         }
                                     }
