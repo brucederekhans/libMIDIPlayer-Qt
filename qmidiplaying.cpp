@@ -249,6 +249,7 @@ void QMIDIPlaying::execute()
                                             else if(hiNybble == 0x0B)
                                             {
                                                 unsigned char controller = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
+                                                unsigned char controllerValue = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
                                             }
                                         }
                                     }
