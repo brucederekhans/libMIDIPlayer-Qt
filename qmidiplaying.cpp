@@ -246,6 +246,10 @@ void QMIDIPlaying::execute()
                                                 unsigned char touch = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
                                                 midiOutShortMsg(hMIDIOut, static_cast<DWORD>(MAKELONG(MAKEWORD(command, key), MAKEWORD(touch, 0))));
                                             }
+                                            else if(hiNybble == 0x0B)
+                                            {
+                                                unsigned char controller = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
+                                            }
                                         }
                                     }
                                 }
