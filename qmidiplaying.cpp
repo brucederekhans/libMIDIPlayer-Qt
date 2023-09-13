@@ -252,6 +252,10 @@ void QMIDIPlaying::execute()
                                                 unsigned char controllerValue = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
                                                 midiOutShortMsg(hMIDIOut, static_cast<DWORD>(MAKELONG(MAKEWORD(command, controller), MAKEWORD(controllerValue, 0))));
                                             }
+                                            else if(hiNybble == 0x0C)
+                                            {
+                                                unsigned char instrument = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
+                                            }
                                         }
                                     }
                                 }
