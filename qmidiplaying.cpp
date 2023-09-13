@@ -255,6 +255,7 @@ void QMIDIPlaying::execute()
                                             else if(hiNybble == 0x0C)
                                             {
                                                 unsigned char instrument = readByteFromMIDITrackHeader(midiTrackHeaders[iTrack]);
+                                                midiOutShortMsg(hMIDIOut, static_cast<DWORD>(MAKELONG(MAKEWORD(command, instrument), MAKEWORD(0, 0))));
                                             }
                                         }
                                     }
