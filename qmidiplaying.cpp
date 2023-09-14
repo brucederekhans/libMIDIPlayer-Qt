@@ -260,6 +260,7 @@ void QMIDIPlaying::execute()
                                             else if(hiNybble == 0x0D)
                                             {
                                                 unsigned char pressure = readByteFromMIDITrackHeader(&midiTrackHeaders[iTrack]);
+                                                midiOutShortMsg(hMIDIOut, static_cast<DWORD>(MAKELONG(MAKEWORD(command, pressure), MAKEWORD(0, 0))));
                                             }
                                         }
                                     }
