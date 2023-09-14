@@ -262,6 +262,10 @@ void QMIDIPlaying::execute()
                                                 unsigned char pressure = readByteFromMIDITrackHeader(&midiTrackHeaders[iTrack]);
                                                 midiOutShortMsg(hMIDIOut, static_cast<DWORD>(MAKELONG(MAKEWORD(command, pressure), MAKEWORD(0, 0))));
                                             }
+                                            else if(hiNybble == 0x0E)
+                                            {
+                                                unsigned short tUShort = readUShortFromMIDITrackHeader(&midiTrackHeaders[iTrack]);
+                                            }
                                         }
                                     }
                                 }
