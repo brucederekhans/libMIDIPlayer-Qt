@@ -266,6 +266,7 @@ void QMIDIPlaying::execute()
                                             {
                                                 unsigned short tUShort = readUShortFromMIDITrackHeader(&midiTrackHeaders[iTrack]);
                                                 unsigned char hiByte = HIBYTE(tUShort);
+                                                unsigned char loByte = LOBYTE(tUShort);
                                             }
                                         }
                                     }
