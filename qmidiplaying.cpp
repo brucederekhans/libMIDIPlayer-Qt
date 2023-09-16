@@ -279,6 +279,11 @@ void QMIDIPlaying::execute()
                                                 {
                                                     midiTrackHeaders[iTrack].pData++;
                                                 }
+                                                else if( (loNybble == 0x00) || (loNybble == 0x07))
+                                                {
+                                                    unsigned int tLength = readVLQFromMIDITrackHeader(&midiTrackHeaders[iTrack]);
+                                                    midiTrackHeaders[iTrack].pData += tLength;
+                                                }
                                             }
                                         }
                                     }
