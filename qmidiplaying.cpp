@@ -285,6 +285,10 @@ void QMIDIPlaying::execute()
                                                     midiTrackHeaders[iTrack].pData += tLength;
                                                 }
                                             }
+                                            else
+                                            {
+                                                midiTrackHeaders[iTrack].pData++;
+                                            }
                                         }
                                     }
                                 }
