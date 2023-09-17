@@ -290,6 +290,11 @@ void QMIDIPlaying::execute()
                                                 midiTrackHeaders[iTrack].pData++;
                                             }
                                         }
+
+                                        if(!midiTrackHeaders[iTrack].isEnabled)
+                                        {
+                                            break;
+                                        }
                                     }
                                 }
                                 else
