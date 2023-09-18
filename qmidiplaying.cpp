@@ -306,6 +306,7 @@ void QMIDIPlaying::execute()
                                 }
                             }
                         }
+                        tCurrentTime = getHighResolutionTime();
                     }
                 }
             }
