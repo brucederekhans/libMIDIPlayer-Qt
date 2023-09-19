@@ -315,6 +315,11 @@ void QMIDIPlaying::execute()
                             }
                         }
                         tCurrentTime = getHighResolutionTime();
+
+                        if(midi.isPaused)
+                        {
+                            setAllNotesOff(&midi, &hMIDIOut);
+                        }
                     }
                 }
             }
