@@ -322,7 +322,7 @@ void QMIDIPlaying::execute()
                             double tPausedTime = tCurrentTime;
                             {
                                 Sleep(10);
-                                if(!midi.isPaused)
+                                if( (!midi.isPaused) || midi.isStopRequested )
                                 {
                                     break;
                                 }
