@@ -319,6 +319,7 @@ void QMIDIPlaying::execute()
                         if(midi.isPaused)
                         {
                             setAllNotesOff(&midi, &hMIDIOut);
+                            double tPausedTime = tCurrentTime;
                         }
                     }
                 }
