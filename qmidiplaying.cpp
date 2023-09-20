@@ -320,6 +320,13 @@ void QMIDIPlaying::execute()
                         {
                             setAllNotesOff(&midi, &hMIDIOut);
                             double tPausedTime = tCurrentTime;
+                            {
+                                Sleep(10);
+                                if(!midi.isPaused)
+                                {
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
