@@ -335,6 +335,7 @@ void QMIDIPlaying::execute()
                             }
 
                             tCurrentTime = getHighResolutionTime();
+                            nextTriggerTime += (tCurrentTime - tPausedTime);
                         }
                     }
                 }
