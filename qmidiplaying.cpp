@@ -333,6 +333,8 @@ void QMIDIPlaying::execute()
                             {
                                 break;
                             }
+
+                            tCurrentTime = getHighResolutionTime();
                         }
                     }
                 }
