@@ -342,6 +342,11 @@ void QMIDIPlaying::execute()
                                 midiTrackHeaders[iTrack].triggerTime += (tCurrentTime - tPausedTime);
                             }
                         }
+
+                        while(tCurrentTime < nextTriggerTime)
+                        {
+                            Sleep(static_cast<DWORD>(nextTriggerTime - tCurrentTime));
+                        }
                     }
                 }
             }
