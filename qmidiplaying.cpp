@@ -343,7 +343,7 @@ void QMIDIPlaying::execute()
                             }
                         }
 
-                        while(tCurrentTime < nextTriggerTime)
+                        while( (!midi.isStopRequested) && (tCurrentTime < nextTriggerTime) )
                         {
                             Sleep(static_cast<DWORD>(nextTriggerTime - tCurrentTime));
                         }
