@@ -354,6 +354,8 @@ void QMIDIPlaying::execute()
                             break;
                         }
                     }
+
+                    setAllNotesOff(&midi, &hMIDIOut);
                 }
             }
             catch(int errCode)
