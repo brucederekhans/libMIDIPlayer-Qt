@@ -346,6 +346,7 @@ void QMIDIPlaying::execute()
                         while( (!midi.isStopRequested) && (tCurrentTime < nextTriggerTime) )
                         {
                             Sleep(static_cast<DWORD>(nextTriggerTime - tCurrentTime));
+                            tCurrentTime = getHighResolutionTime();
                         }
                     }
                 }
