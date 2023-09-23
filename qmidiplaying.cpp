@@ -348,6 +348,11 @@ void QMIDIPlaying::execute()
                             Sleep(static_cast<DWORD>(nextTriggerTime - tCurrentTime));
                             tCurrentTime = getHighResolutionTime();
                         }
+
+                        if(!isAnyTrackEnabled)
+                        {
+                            break;
+                        }
                     }
                 }
             }
