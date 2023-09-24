@@ -359,6 +359,10 @@ void QMIDIPlaying::execute()
                     Sleep(10);
                     midiOutReset(hMIDIOut);
                     MMRESULT resultMIDIOutClose;
+                    do
+                    {
+                        resultMIDIOutClose = midiOutClose(hMIDIOut);
+                    }while(resultMIDIOutClose != MMSYSERR_NOERROR);
                 }
             }
             catch(int errCode)
