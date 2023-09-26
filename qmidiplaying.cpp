@@ -365,6 +365,8 @@ void QMIDIPlaying::execute()
                         iTryClosing++;
                     }
                     hMIDIOut = nullptr;
+
+                    midi.isPlaying = 0;
                 }
             }
             catch(int errCode)
