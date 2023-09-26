@@ -364,6 +364,7 @@ void QMIDIPlaying::execute()
                         Sleep(10);
                         iTryClosing++;
                     }
+                    hMIDIOut = nullptr;
                 }
             }
             catch(int errCode)
