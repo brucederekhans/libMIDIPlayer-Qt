@@ -379,6 +379,7 @@ void QMIDIPlaying::execute()
                         {
                             delete [](midiTrackHeaders[iTrack].data);
                         }
+                        memset(&midiTrackHeaders[iTrack], 0, sizeof(QMIDITrackHeader));
                     }
                 }
             }
