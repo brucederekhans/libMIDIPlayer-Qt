@@ -375,6 +375,10 @@ void QMIDIPlaying::execute()
                     for(iTrack = 0; iTrack < midi.countTracks; iTrack++)
                     {
                         midiTrackHeaders[iTrack].pData = nullptr;
+                        if(midiTrackHeaders[iTrack].data)
+                        {
+                            delete [](midiTrackHeaders[iTrack].data);
+                        }
                     }
                 }
             }
