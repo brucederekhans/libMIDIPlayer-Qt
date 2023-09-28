@@ -381,6 +381,7 @@ void QMIDIPlaying::execute()
                         }
                         memset(&midiTrackHeaders[iTrack], 0, sizeof(QMIDITrackHeader));
                     }
+                    delete []midiTrackHeaders;
                 }
             }
             catch(int errCode)
