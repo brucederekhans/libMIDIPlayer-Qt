@@ -4,8 +4,7 @@ QMIDIPlaying::QMIDIPlaying(char * pFilename, unsigned char AVolumePercentage, QO
     QObject(parent),
     volumePercentage(AVolumePercentage),
     selectedOuputDeviceIndex(0),
-    isSelectedOuputDeviceValid(false),
-    isTrackHeadersValid(false)
+    isSelectedOuputDeviceValid(false)
 {
     strcpy(this->filename, pFilename);
     unsigned long long i, countMIDIOutDevices = midiOutGetNumDevs();
@@ -65,6 +64,7 @@ void QMIDIPlaying::execute()
                     throw -5;
                 }
 
+                bool isTrackHeadersValid = false;
                 midiTrackHeaders = new QMIDITrackHeader[midi.countTracks];
                 try
                 {
@@ -102,7 +102,7 @@ void QMIDIPlaying::execute()
                             iTrack++;
                         }
                     }
-                    this->isTrackHeadersValid = true;
+                    isTrackHeadersValid = true;
                     midi.countTracks = iTrack;
                 }
                 catch(int errCode)
@@ -369,7 +369,7 @@ void QMIDIPlaying::execute()
                     midi.isPlaying = 0;
                 }
 
-                if(this->isTrackHeadersValid)
+                if(isTrackHeadersValid)
                 {
                     unsigned short iTrack;
                     for(iTrack = 0; iTrack < midi.countTracks; iTrack++)
@@ -383,7 +383,7 @@ void QMIDIPlaying::execute()
                     }
                     delete []midiTrackHeaders;
 
-                    this->isTrackHeadersValid = false;
+                    isTrackHeadersValid = false;
                 }
             }
             catch(int errCode)
