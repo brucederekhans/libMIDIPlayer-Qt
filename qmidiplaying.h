@@ -13,6 +13,7 @@ public:
 
 private:
     char filename[MAX_PATH];
+    unsigned char isPaused;
     unsigned char volumePercentage;
     unsigned long long selectedOuputDeviceIndex;
     bool isSelectedOuputDeviceValid;
