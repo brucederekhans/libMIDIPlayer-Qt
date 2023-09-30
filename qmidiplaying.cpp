@@ -3,6 +3,7 @@
 QMIDIPlaying::QMIDIPlaying(char * pFilename, unsigned char AVolumePercentage, QObject * parent) :
     QObject(parent),
     isPaused(0),
+    isStopRequested(0),
     volumePercentage(AVolumePercentage),
     selectedOuputDeviceIndex(0),
     isSelectedOuputDeviceValid(false)
