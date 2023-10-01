@@ -5,7 +5,6 @@
 #include <mmsystem.h>
 
 struct QMIDI{
-    unsigned char isPlaying;
     unsigned short countTracks;
     unsigned short countTicks;
     unsigned int tempo;
