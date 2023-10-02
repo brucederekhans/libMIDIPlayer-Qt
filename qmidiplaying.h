@@ -12,6 +12,7 @@ public:
     ~QMIDIPlaying();
     void setIsPaused(unsigned char AIsPaused);
     void setIsStopRequested(unsigned char AIsStopRequested);
+    void setVolumePercentage(unsigned char AVolumePercentage);
 
 private:
     char filename[MAX_PATH];

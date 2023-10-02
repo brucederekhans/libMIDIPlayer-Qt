@@ -43,6 +43,14 @@ void QMIDIPlaying::setIsStopRequested(unsigned char AIsStopRequested)
     }
 }
 
+void QMIDIPlaying::setVolumePercentage(unsigned char AVolumePercentage)
+{
+    if(this->isSelectedOuputDeviceValid)
+    {
+        this->volumePercentage = AVolumePercentage;
+    }
+}
+
 void QMIDIPlaying::execute()
 {
     if(this->isSelectedOuputDeviceValid)
