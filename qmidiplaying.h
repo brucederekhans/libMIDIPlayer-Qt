@@ -11,6 +11,7 @@ public:
     explicit QMIDIPlaying(char * pFilename, unsigned char AVolumePercentage, QObject * parent = nullptr);
     ~QMIDIPlaying();
     void setIsPaused(unsigned char AIsPaused);
+    void setIsStopRequested(unsigned char AIsStopRequested);
 
 private:
     char filename[MAX_PATH];
