@@ -92,9 +92,9 @@ void QMIDIPlaying::execute()
 
                 bool isTrackHeadersValid = false;
                 midiTrackHeaders = new QMIDITrackHeader[midi.countTracks];
+                unsigned short iTrack = 0;
                 try
                 {
-                    unsigned short iTrack = 0;
                     while(!feof(pMIDIFile))
                     {
                         unsigned char t4Bytes[4];
