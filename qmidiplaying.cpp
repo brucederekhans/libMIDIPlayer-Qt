@@ -29,12 +29,18 @@ QMIDIPlaying::~QMIDIPlaying()
 
 void QMIDIPlaying::setIsPaused(unsigned char AIsPaused)
 {
-    this->isPaused = AIsPaused;
+    if(this->isSelectedOuputDeviceValid)
+    {
+        this->isPaused = AIsPaused;
+    }
 }
 
 void QMIDIPlaying::setIsStopRequested(unsigned char AIsStopRequested)
 {
-    this->isStopRequested = AIsStopRequested;
+    if(this->isSelectedOuputDeviceValid)
+    {
+        this->isStopRequested = AIsStopRequested;
+    }
 }
 
 void QMIDIPlaying::execute()
