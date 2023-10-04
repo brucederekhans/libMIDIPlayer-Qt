@@ -90,7 +90,6 @@ void QMIDIPlaying::execute()
                     throw -5;
                 }
 
-                bool isTrackHeadersValid = false;
                 midiTrackHeaders = new QMIDITrackHeader[midi.countTracks];
                 unsigned short iTrack = 0;
                 try
@@ -128,7 +127,6 @@ void QMIDIPlaying::execute()
                             iTrack++;
                         }
                     }
-                    isTrackHeadersValid = true;
                     midi.countTracks = iTrack;
 
                     fclose(pMIDIFile);
@@ -387,20 +385,17 @@ void QMIDIPlaying::execute()
                         hMIDIOut = nullptr;
                     }
 
-                    if(isTrackHeadersValid)
+                    unsigned short iTrack;
+                    for(iTrack = 0; iTrack < midi.countTracks; iTrack++)
                     {
-                        unsigned short iTrack;
-                        for(iTrack = 0; iTrack < midi.countTracks; iTrack++)
+                        midiTrackHeaders[iTrack].pData = nullptr;
+                        if(midiTrackHeaders[iTrack].data)
                         {
-                            midiTrackHeaders[iTrack].pData = nullptr;
-                            if(midiTrackHeaders[iTrack].data)
-                            {
-                                delete [](midiTrackHeaders[iTrack].data);
-                            }
-                            memset(&midiTrackHeaders[iTrack], 0, sizeof(QMIDITrackHeader));
+                            delete [](midiTrackHeaders[iTrack].data);
                         }
-                        delete []midiTrackHeaders;
+                        memset(&midiTrackHeaders[iTrack], 0, sizeof(QMIDITrackHeader));
                     }
+                    delete []midiTrackHeaders;
                 }
                 catch(int errCode)
                 {
