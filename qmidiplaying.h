@@ -1,6 +1,7 @@
 #ifndef QMIDIPLAYING_H
 #define QMIDIPLAYING_H
 
+#include <QObject>
 #include "qmidi.h"
 #include "qmiditrackheader.h"
 
