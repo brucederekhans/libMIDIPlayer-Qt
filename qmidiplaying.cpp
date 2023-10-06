@@ -386,7 +386,7 @@ void QMIDIPlaying::execute()
                     }
 
                     unsigned short jTrack;
-                    for(jTrack = 0; jTrack < midi.countTracks; jTrack++)
+                    for(jTrack = (midi.countTracks - 1); jTrack >= 0; jTrack--)
                     {
                         midiTrackHeaders[jTrack].pData = nullptr;
                         if(midiTrackHeaders[jTrack].data)
