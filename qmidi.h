@@ -1,6 +1,7 @@
 #ifndef QMIDI_H
 #define QMIDI_H
 
+#include <stdio.h>
 #include <windows.h>
 #include <mmsystem.h>
 
