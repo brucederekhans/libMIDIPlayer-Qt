@@ -411,6 +411,7 @@ void QMIDIPlaying::execute()
             }
             catch(int errCode)
             {
+                Q_UNUSED(errCode)
                 fclose(pMIDIFile);
             }
         }
