@@ -153,9 +153,9 @@ void QMIDIPlaying::execute()
                                     isAnyTrackEnabled = 1;
                                     if(midiTrackHeaders[jTrack].pData < (midiTrackHeaders[jTrack].data + midiTrackHeaders[jTrack].length))
                                     {
-                                        if(midiTrackHeaders[jTrack].isReadOnce)
+                                        if(midiTrackHeaders[jTrack].isReadOnce == 0)
                                         {
-                                            midiTrackHeaders[jTrack].isReadOnce = 0;
+                                            midiTrackHeaders[jTrack].isReadOnce = 1;
                                             midiTrackHeaders[jTrack].deltaTime = readVLQFromMIDITrackHeader(&midiTrackHeaders[jTrack]) * midi.tickLength;
                                             midiTrackHeaders[jTrack].triggerTime = tCurrentTime + midiTrackHeaders[jTrack].deltaTime;
                                         }
