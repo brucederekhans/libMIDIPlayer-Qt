@@ -96,10 +96,10 @@ void QMIDIPlaying::execute()
                 {
                     while(!feof(pMIDIFile))
                     {
-                        unsigned char t4Bytes[4];
-                        if(fread(t4Bytes, 1, 4, pMIDIFile) == 4)
+                        unsigned char t4BytesBufferMTrk[4];
+                        if(fread(t4BytesBufferMTrk, 1, 4, pMIDIFile) == 4)
                         {
-                            if(memcmp(t4Bytes, MTrk, 4))
+                            if(memcmp(t4BytesBufferMTrk, MTrk, 4))
                             {
                                 throw -6;
                             }
