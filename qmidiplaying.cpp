@@ -407,6 +407,7 @@ void QMIDIPlaying::execute()
                         }
                     }
                     delete []midiTrackHeaders;
+                    throw errCode;
                 }
             }
             catch(int errCode)
