@@ -398,7 +398,15 @@ void QMIDIPlaying::execute()
                 }
                 catch(int errCode)
                 {
-                    if(errCode == -8)
+                    if(errCode == -7)
+                    {
+                        unsigned short jTrack;
+                        for(jTrack = 0; jTrack < iTrack; jTrack++)
+                        {
+                            delete [](midiTrackHeaders[jTrack].data);
+                        }
+                    }
+                    else if(errCode == -8)
                     {
                         unsigned short jTrack;
                         for(jTrack = 0; jTrack <= iTrack; jTrack++)
