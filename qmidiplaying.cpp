@@ -160,7 +160,7 @@ void QMIDIPlaying::execute()
                                             midiTrackHeaders[jTrack].triggerTime = tCurrentTime + midiTrackHeaders[jTrack].deltaTime;
                                         }
 
-                                        while(tCurrentTime >= midiTrackHeaders[jTrack].triggerTime)
+                                        while( (tCurrentTime >= midiTrackHeaders[jTrack].triggerTime) && (midiTrackHeaders[jTrack].isEnabled) )
                                         {
                                             midi.currentTime = tCurrentTime;
 
@@ -311,11 +311,6 @@ void QMIDIPlaying::execute()
 
                                             midiTrackHeaders[jTrack].deltaTime = readVLQFromMIDITrackHeader(&midiTrackHeaders[jTrack]) * midi.tickLength;
                                             midiTrackHeaders[jTrack].triggerTime += midiTrackHeaders[jTrack].deltaTime;
-
-                                            if(!midiTrackHeaders[jTrack].isEnabled)
-                                            {
-                                                break;
-                                            }
                                         }
 
                                         if(midiTrackHeaders[jTrack].isEnabled)
