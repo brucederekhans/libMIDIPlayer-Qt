@@ -11,6 +11,7 @@ class QMIDIPlaying : public QObject
 public:
     explicit QMIDIPlaying(char * pFilename, unsigned char AVolumePercentage, QObject * parent = nullptr);
     ~QMIDIPlaying();
+    unsigned char getIsPaused();
     void setIsPaused(unsigned char AIsPaused);
     void setIsStopRequested(unsigned char AIsStopRequested);
     void setVolumePercentage(unsigned char AVolumePercentage);

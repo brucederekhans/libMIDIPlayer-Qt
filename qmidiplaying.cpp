@@ -27,6 +27,11 @@ QMIDIPlaying::~QMIDIPlaying()
     //
 }
 
+unsigned char QMIDIPlaying::getIsPaused()
+{
+    return this->isPaused;
+}
+
 void QMIDIPlaying::setIsPaused(unsigned char AIsPaused)
 {
     if(this->isSelectedOuputDeviceValid)
