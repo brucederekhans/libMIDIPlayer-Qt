@@ -13,6 +13,7 @@ public:
     ~QMIDIPlaying();
     unsigned char getIsPaused();
     void setIsPaused(unsigned char AIsPaused);
+    unsigned char getIsStopRequested();
     void setIsStopRequested(unsigned char AIsStopRequested);
     void setVolumePercentage(unsigned char AVolumePercentage);
 
