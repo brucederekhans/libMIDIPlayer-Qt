@@ -15,6 +15,7 @@ public:
     void setIsPaused(unsigned char AIsPaused);
     unsigned char getIsStopRequested();
     void setIsStopRequested(unsigned char AIsStopRequested);
+    unsigned char getVolumePercentage();
     void setVolumePercentage(unsigned char AVolumePercentage);
 
 private:
