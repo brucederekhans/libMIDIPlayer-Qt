@@ -9,7 +9,7 @@ class QMIDIPlaying : public QObject
 {
     Q_OBJECT
 public:
-    explicit QMIDIPlaying(char * pFilename, unsigned char AVolumePercentage, QObject * parent = nullptr);
+    explicit QMIDIPlaying(const char * pFilename, unsigned char AVolumePercentage, QObject * parent = nullptr);
     ~QMIDIPlaying();
     unsigned char getIsPaused();
     void setIsPaused(unsigned char AIsPaused);
