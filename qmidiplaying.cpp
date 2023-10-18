@@ -85,7 +85,7 @@ void QMIDIPlaying::execute()
                     throw -1;
                 }
 
-                if(memcmp(t4BytesBufferMThd, MThd, 4))
+                if(memcmp(t4BytesBufferMThd, MIDI::MThd, 4))
                 {
                     throw -2;
                 }
@@ -114,7 +114,7 @@ void QMIDIPlaying::execute()
                         unsigned char t4BytesBufferMTrk[4];
                         if(fread(t4BytesBufferMTrk, 1, 4, pMIDIFile) == 4)
                         {
-                            if(memcmp(t4BytesBufferMTrk, MTrk, 4))
+                            if(memcmp(t4BytesBufferMTrk, MIDI::MTrk, 4))
                             {
                                 throw -6;
                             }
