@@ -3,7 +3,7 @@
 const char MIDI::MThd[5] = "MThd";
 const char MIDI::MTrk[5] = "MTrk";
 
-unsigned long long readUShortFromMIDIFile(unsigned short * pDst, FILE * pMIDIFile)
+unsigned long long MIDI::readUShortFromMIDIFile(unsigned short * pDst, FILE * pMIDIFile)
 {
     if(pMIDIFile == nullptr)
     {
@@ -28,7 +28,7 @@ unsigned long long readUShortFromMIDIFile(unsigned short * pDst, FILE * pMIDIFil
     return 2;
 }
 
-unsigned long long readUIntFromMIDIFile(unsigned int * pDst, FILE * pMIDIFile)
+unsigned long long MIDI::readUIntFromMIDIFile(unsigned int * pDst, FILE * pMIDIFile)
 {
     if(pMIDIFile == nullptr)
     {
@@ -51,7 +51,7 @@ unsigned long long readUIntFromMIDIFile(unsigned int * pDst, FILE * pMIDIFile)
     return 4;
 }
 
-double getHighResolutionTime()
+double MIDI::getHighResolutionTime()
 {
     timeBeginPeriod(1);
     double highResolutionTime = static_cast<double>(timeGetTime());
@@ -59,7 +59,7 @@ double getHighResolutionTime()
     return highResolutionTime;
 }
 
-void setNoteOnOff(unsigned char isOn, unsigned char note, unsigned char velocity, unsigned char velocityPercentage, unsigned char channelIndex, QMIDI * pMIDI, HMIDIOUT * pHMIDIOut)
+void MIDI::setNoteOnOff(unsigned char isOn, unsigned char note, unsigned char velocity, unsigned char velocityPercentage, unsigned char channelIndex, QMIDI * pMIDI, HMIDIOUT * pHMIDIOut)
 {
     velocity = static_cast<unsigned char>(velocity * velocityPercentage / 100.0);
     pMIDI->channels[channelIndex][note] = (isOn ? velocity : 0);
@@ -70,7 +70,7 @@ void setNoteOnOff(unsigned char isOn, unsigned char note, unsigned char velocity
     }
 }
 
-void setAllNotesOff(QMIDI * pMIDI, HMIDIOUT * pHMIDIOut)
+void MIDI::setAllNotesOff(QMIDI * pMIDI, HMIDIOUT * pHMIDIOut)
 {
     unsigned short channel;
     for(channel = 0; channel < 16; channel++)
