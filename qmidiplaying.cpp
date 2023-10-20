@@ -1,6 +1,6 @@
 #include "qmidiplaying.h"
 
-QMIDIPlaying::QMIDIPlaying(const char * pFilename, unsigned char AVolumePercentage, QObject * parent) :
+MIDI::QMIDIPlaying::QMIDIPlaying(const char * pFilename, unsigned char AVolumePercentage, QObject * parent) :
     QObject(parent),
     isPaused(0),
     isStopRequested(0),
@@ -22,17 +22,17 @@ QMIDIPlaying::QMIDIPlaying(const char * pFilename, unsigned char AVolumePercenta
     }
 }
 
-QMIDIPlaying::~QMIDIPlaying()
+MIDI::QMIDIPlaying::~QMIDIPlaying()
 {
     //
 }
 
-unsigned char QMIDIPlaying::getIsPaused()
+unsigned char MIDI::QMIDIPlaying::getIsPaused()
 {
     return this->isPaused;
 }
 
-void QMIDIPlaying::setIsPaused(unsigned char AIsPaused)
+void MIDI::QMIDIPlaying::setIsPaused(unsigned char AIsPaused)
 {
     if(this->isSelectedOuputDeviceValid)
     {
@@ -40,12 +40,12 @@ void QMIDIPlaying::setIsPaused(unsigned char AIsPaused)
     }
 }
 
-unsigned char QMIDIPlaying::getIsStopRequested()
+unsigned char MIDI::QMIDIPlaying::getIsStopRequested()
 {
     return this->isStopRequested;
 }
 
-void QMIDIPlaying::setIsStopRequested(unsigned char AIsStopRequested)
+void MIDI::QMIDIPlaying::setIsStopRequested(unsigned char AIsStopRequested)
 {
     if(this->isSelectedOuputDeviceValid)
     {
@@ -53,12 +53,12 @@ void QMIDIPlaying::setIsStopRequested(unsigned char AIsStopRequested)
     }
 }
 
-unsigned char QMIDIPlaying::getVolumePercentage()
+unsigned char MIDI::QMIDIPlaying::getVolumePercentage()
 {
     return this->volumePercentage;
 }
 
-void QMIDIPlaying::setVolumePercentage(unsigned char AVolumePercentage)
+void MIDI::QMIDIPlaying::setVolumePercentage(unsigned char AVolumePercentage)
 {
     if(this->isSelectedOuputDeviceValid)
     {
@@ -66,7 +66,7 @@ void QMIDIPlaying::setVolumePercentage(unsigned char AVolumePercentage)
     }
 }
 
-void QMIDIPlaying::execute()
+void MIDI::QMIDIPlaying::execute()
 {
     if(this->isSelectedOuputDeviceValid)
     {
@@ -85,7 +85,7 @@ void QMIDIPlaying::execute()
                     throw -1;
                 }
 
-                if(memcmp(t4BytesBufferMThd, MIDI::MThd, 4))
+                if(memcmp(t4BytesBufferMThd, MThd, 4))
                 {
                     throw -2;
                 }
@@ -114,7 +114,7 @@ void QMIDIPlaying::execute()
                         unsigned char t4BytesBufferMTrk[4];
                         if(fread(t4BytesBufferMTrk, 1, 4, pMIDIFile) == 4)
                         {
-                            if(memcmp(t4BytesBufferMTrk, MIDI::MTrk, 4))
+                            if(memcmp(t4BytesBufferMTrk, MTrk, 4))
                             {
                                 throw -6;
                             }
