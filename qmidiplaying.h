@@ -5,7 +5,7 @@
 #include "qmidi.h"
 #include "qmiditrackheader.h"
 
-namespace MIDI{
+namespace QMIDI{
     class QMIDIPlaying : public QObject
     {
         Q_OBJECT

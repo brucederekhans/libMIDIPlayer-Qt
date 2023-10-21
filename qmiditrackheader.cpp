@@ -1,6 +1,6 @@
 #include "qmiditrackheader.h"
 
-unsigned int MIDI::readVLQFromMIDITrackHeader(QMIDITrackHeader * pMIDITrackHeader)
+unsigned int QMIDI::readVLQFromMIDITrackHeader(QMIDITrackHeader * pMIDITrackHeader)
 {
     unsigned char * p = pMIDITrackHeader->pData;
     unsigned int vlq = *p;
@@ -23,14 +23,14 @@ unsigned int MIDI::readVLQFromMIDITrackHeader(QMIDITrackHeader * pMIDITrackHeade
     return vlq;
 }
 
-unsigned char MIDI::readByteFromMIDITrackHeader(QMIDITrackHeader * pMIDITrackHeader)
+unsigned char QMIDI::readByteFromMIDITrackHeader(QMIDITrackHeader * pMIDITrackHeader)
 {
     unsigned char data = *(pMIDITrackHeader->pData);
     pMIDITrackHeader->pData++;
     return data;
 }
 
-unsigned short MIDI::readUShortFromMIDITrackHeader(QMIDITrackHeader * pMIDITrackHeader)
+unsigned short QMIDI::readUShortFromMIDITrackHeader(QMIDITrackHeader * pMIDITrackHeader)
 {
     unsigned char high = readByteFromMIDITrackHeader(pMIDITrackHeader);
     unsigned char low = readByteFromMIDITrackHeader(pMIDITrackHeader);

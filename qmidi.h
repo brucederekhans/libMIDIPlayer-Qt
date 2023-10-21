@@ -5,7 +5,7 @@
 #include <windows.h>
 #include <mmsystem.h>
 
-namespace MIDI{
+namespace QMIDI{
     struct QMIDI{
         unsigned short countTracks;
         unsigned short countTicks;

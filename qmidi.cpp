@@ -1,9 +1,9 @@
 #include "qmidi.h"
 
-const char MIDI::MThd[5] = "MThd";
-const char MIDI::MTrk[5] = "MTrk";
+const char QMIDI::MThd[5] = "MThd";
+const char QMIDI::MTrk[5] = "MTrk";
 
-unsigned long long MIDI::readUShortFromMIDIFile(unsigned short * pDst, FILE * pMIDIFile)
+unsigned long long QMIDI::readUShortFromMIDIFile(unsigned short * pDst, FILE * pMIDIFile)
 {
     if(pMIDIFile == nullptr)
     {
@@ -28,7 +28,7 @@ unsigned long long MIDI::readUShortFromMIDIFile(unsigned short * pDst, FILE * pM
     return 2;
 }
 
-unsigned long long MIDI::readUIntFromMIDIFile(unsigned int * pDst, FILE * pMIDIFile)
+unsigned long long QMIDI::readUIntFromMIDIFile(unsigned int * pDst, FILE * pMIDIFile)
 {
     if(pMIDIFile == nullptr)
     {
@@ -51,7 +51,7 @@ unsigned long long MIDI::readUIntFromMIDIFile(unsigned int * pDst, FILE * pMIDIF
     return 4;
 }
 
-double MIDI::getHighResolutionTime()
+double QMIDI::getHighResolutionTime()
 {
     timeBeginPeriod(1);
     double highResolutionTime = static_cast<double>(timeGetTime());
@@ -59,7 +59,7 @@ double MIDI::getHighResolutionTime()
     return highResolutionTime;
 }
 
-void MIDI::setNoteOnOff(unsigned char isOn, unsigned char note, unsigned char velocity, unsigned char velocityPercentage, unsigned char channelIndex, QMIDI * pMIDI, HMIDIOUT * pHMIDIOut)
+void QMIDI::setNoteOnOff(unsigned char isOn, unsigned char note, unsigned char velocity, unsigned char velocityPercentage, unsigned char channelIndex, QMIDI * pMIDI, HMIDIOUT * pHMIDIOut)
 {
     velocity = static_cast<unsigned char>(velocity * velocityPercentage / 100.0);
     pMIDI->channels[channelIndex][note] = (isOn ? velocity : 0);
@@ -70,7 +70,7 @@ void MIDI::setNoteOnOff(unsigned char isOn, unsigned char note, unsigned char ve
     }
 }
 
-void MIDI::setAllNotesOff(QMIDI * pMIDI, HMIDIOUT * pHMIDIOut)
+void QMIDI::setAllNotesOff(QMIDI * pMIDI, HMIDIOUT * pHMIDIOut)
 {
     unsigned short channel;
     for(channel = 0; channel < 16; channel++)

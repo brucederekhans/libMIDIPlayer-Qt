@@ -1,6 +1,6 @@
 #include "qmidiplaying.h"
 
-MIDI::QMIDIPlaying::QMIDIPlaying(const char * pFilename, unsigned char AVolumePercentage, QObject * parent) :
+QMIDI::QMIDIPlaying::QMIDIPlaying(const char * pFilename, unsigned char AVolumePercentage, QObject * parent) :
     QObject(parent),
     isPaused(0),
     isStopRequested(0),
@@ -22,17 +22,17 @@ MIDI::QMIDIPlaying::QMIDIPlaying(const char * pFilename, unsigned char AVolumePe
     }
 }
 
-MIDI::QMIDIPlaying::~QMIDIPlaying()
+QMIDI::QMIDIPlaying::~QMIDIPlaying()
 {
     //
 }
 
-unsigned char MIDI::QMIDIPlaying::getIsPaused()
+unsigned char QMIDI::QMIDIPlaying::getIsPaused()
 {
     return this->isPaused;
 }
 
-void MIDI::QMIDIPlaying::setIsPaused(unsigned char AIsPaused)
+void QMIDI::QMIDIPlaying::setIsPaused(unsigned char AIsPaused)
 {
     if(this->isSelectedOuputDeviceValid)
     {
@@ -40,12 +40,12 @@ void MIDI::QMIDIPlaying::setIsPaused(unsigned char AIsPaused)
     }
 }
 
-unsigned char MIDI::QMIDIPlaying::getIsStopRequested()
+unsigned char QMIDI::QMIDIPlaying::getIsStopRequested()
 {
     return this->isStopRequested;
 }
 
-void MIDI::QMIDIPlaying::setIsStopRequested(unsigned char AIsStopRequested)
+void QMIDI::QMIDIPlaying::setIsStopRequested(unsigned char AIsStopRequested)
 {
     if(this->isSelectedOuputDeviceValid)
     {
@@ -53,12 +53,12 @@ void MIDI::QMIDIPlaying::setIsStopRequested(unsigned char AIsStopRequested)
     }
 }
 
-unsigned char MIDI::QMIDIPlaying::getVolumePercentage()
+unsigned char QMIDI::QMIDIPlaying::getVolumePercentage()
 {
     return this->volumePercentage;
 }
 
-void MIDI::QMIDIPlaying::setVolumePercentage(unsigned char AVolumePercentage)
+void QMIDI::QMIDIPlaying::setVolumePercentage(unsigned char AVolumePercentage)
 {
     if(this->isSelectedOuputDeviceValid)
     {
@@ -66,7 +66,7 @@ void MIDI::QMIDIPlaying::setVolumePercentage(unsigned char AVolumePercentage)
     }
 }
 
-void MIDI::QMIDIPlaying::execute()
+void QMIDI::QMIDIPlaying::execute()
 {
     if(this->isSelectedOuputDeviceValid)
     {

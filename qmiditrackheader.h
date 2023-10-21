@@ -3,7 +3,7 @@
 
 #include <windows.h>
 
-namespace MIDI{
+namespace QMIDI{
     struct QMIDITrackHeader{
         unsigned char isEnabled;
         unsigned char isReadOnce;
