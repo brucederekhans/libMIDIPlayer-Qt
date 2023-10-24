@@ -1,6 +1,6 @@
 #include "qmidiplaying.h"
 
-QMIDI::QMIDIPlaying::QMIDIPlaying(const char * pFilename, unsigned char AVolumePercentage, QObject * parent) :
+QMIDI::QMIDIPlaying::QMIDIPlaying(const wchar_t * pFilename, unsigned char AVolumePercentage, QObject * parent) :
     QObject(parent),
     isPaused(0),
     isStopRequested(0),
@@ -8,7 +8,7 @@ QMIDI::QMIDIPlaying::QMIDIPlaying(const char * pFilename, unsigned char AVolumeP
     selectedOuputDeviceIndex(0),
     isSelectedOuputDeviceValid(false)
 {
-    strcpy(this->filename, pFilename);
+    wcscpy(this->filename, pFilename);
     this->volumePercentage = std::min(this->volumePercentage, static_cast<unsigned char>(100));
     unsigned long long i, countMIDIOutDevices = midiOutGetNumDevs();
     for(i = 0; i < countMIDIOutDevices; i++)
@@ -72,7 +72,7 @@ void QMIDI::QMIDIPlaying::execute()
     if(this->isSelectedOuputDeviceValid)
     {
         FILE * pMIDIFile;
-        fopen_s(&pMIDIFile, this->filename, "rb");
+        _wfopen_s(&pMIDIFile, this->filename, L"rb");
         if(pMIDIFile != nullptr)
         {
             QMIDI midi;
