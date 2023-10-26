@@ -62,7 +62,6 @@ double QMIDI::getHighResolutionTime()
 void QMIDI::setNoteOnOff(unsigned char isOn, unsigned char note, unsigned char velocity, unsigned char velocityPercentage, unsigned char channelIndex, QMIDI * pMIDI, HMIDIOUT * pHMIDIOut)
 {
     velocity = static_cast<unsigned char>(velocity * velocityPercentage / 100.0);
-    pMIDI->channels[channelIndex][note] = (isOn ? velocity : 0);
 
     if(*pHMIDIOut)
     {
