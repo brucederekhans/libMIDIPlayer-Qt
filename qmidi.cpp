@@ -69,7 +69,7 @@ void QMIDI::setNoteOnOff(unsigned char isOn, unsigned char note, unsigned char v
     }
 }
 
-void QMIDI::setAllNotesOff(QMIDI * pMIDI, HMIDIOUT * pHMIDIOut)
+void QMIDI::setAllNotesOff(HMIDIOUT * pHMIDIOut)
 {
     unsigned short channel;
     for(channel = 0; channel < 16; channel++)
