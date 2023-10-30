@@ -347,7 +347,7 @@ void QMIDI::QMIDIPlaying::execute()
 
                             if(this->isPaused)
                             {
-                                setAllNotesOff(&midi, &hMIDIOut);
+                                setAllNotesOff(&hMIDIOut);
                                 double tPausedTime = tCurrentTime;
                                 while(true)
                                 {
@@ -384,7 +384,7 @@ void QMIDI::QMIDIPlaying::execute()
                             }
                         }
 
-                        setAllNotesOff(&midi, &hMIDIOut);
+                        setAllNotesOff(&hMIDIOut);
                         Sleep(10);
                         midiOutReset(hMIDIOut);
                         unsigned short iTryClosing = 0;
