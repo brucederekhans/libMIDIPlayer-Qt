@@ -120,9 +120,6 @@ void QMIDI::QMIDIPlaying::execute()
                                 throw -6;
                             }
 
-                            midiTrackHeaders[iTrack].isEnabled = 1;
-                            midiTrackHeaders[iTrack].isReadOnce = 0;
-
                             if(readUIntFromMIDIFile(&midiTrackHeaders[iTrack].length, pMIDIFile) != 4)
                             {
                                 throw -7;
@@ -134,11 +131,6 @@ void QMIDI::QMIDIPlaying::execute()
                             {
                                 throw -8;
                             }
-
-                            midiTrackHeaders[iTrack].pData = midiTrackHeaders[iTrack].data;
-                            midiTrackHeaders[iTrack].deltaTime = 0;
-                            midiTrackHeaders[iTrack].triggerTime = 0;
-                            midiTrackHeaders[iTrack].lastCommand = 0;
 
                             iTrack++;
                         }
@@ -155,6 +147,15 @@ void QMIDI::QMIDIPlaying::execute()
                         midi.currentTime = getHighResolutionTime();
 
                         unsigned short jTrack;
+                        for(jTrack = 0; jTrack < midi.countTracks; jTrack++)
+                        {
+                            midiTrackHeaders[jTrack].isEnabled = 1;
+                            midiTrackHeaders[jTrack].isReadOnce = 0;
+                            midiTrackHeaders[jTrack].pData = midiTrackHeaders[jTrack].data;
+                            midiTrackHeaders[jTrack].deltaTime = 0;
+                            midiTrackHeaders[jTrack].triggerTime = 0;
+                            midiTrackHeaders[jTrack].lastCommand = 0;
+                        }
 
                         double tCurrentTime;
                         while(!this->isStopRequested)
