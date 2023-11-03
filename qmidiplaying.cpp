@@ -1,7 +1,8 @@
 #include "qmidiplaying.h"
 
-QMIDI::QMIDIPlaying::QMIDIPlaying(const wchar_t * pFilename, unsigned char AVolumePercentage, QObject * parent) :
+QMIDI::QMIDIPlaying::QMIDIPlaying(const wchar_t * pFilename, unsigned char AVolumePercentage, unsigned char AIsLoop, QObject * parent) :
     QObject(parent),
+    isLoop(AIsLoop),
     isPaused(0),
     isStopRequested(0),
     volumePercentage(AVolumePercentage),
