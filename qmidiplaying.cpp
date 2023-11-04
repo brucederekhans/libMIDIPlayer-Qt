@@ -29,6 +29,14 @@ QMIDI::QMIDIPlaying::~QMIDIPlaying()
     //
 }
 
+void QMIDI::QMIDIPlaying::setIsLoop(unsigned char AIsLoop)
+{
+    if(this->isSelectedOuputDeviceValid)
+    {
+        this->isLoop = AIsLoop;
+    }
+}
+
 unsigned char QMIDI::QMIDIPlaying::getIsPaused()
 {
     return this->isPaused;
