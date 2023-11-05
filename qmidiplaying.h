@@ -12,6 +12,7 @@ namespace QMIDI{
     public:
         explicit QMIDIPlaying(const wchar_t * pFilename, unsigned char AVolumePercentage, unsigned char AIsLoop, QObject * parent = nullptr);
         ~QMIDIPlaying();
+        unsigned char getIsLoop();
         void setIsLoop(unsigned char AIsLoop);
         unsigned char getIsPaused();
         void setIsPaused(unsigned char AIsPaused);
