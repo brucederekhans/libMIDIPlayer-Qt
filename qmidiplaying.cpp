@@ -81,6 +81,11 @@ void QMIDI::QMIDIPlaying::setVolumePercentage(unsigned char AVolumePercentage)
     }
 }
 
+unsigned long long QMIDI::QMIDIPlaying::getSelectedOuputDeviceIndex()
+{
+    return this->selectedOuputDeviceIndex;
+}
+
 void QMIDI::QMIDIPlaying::execute()
 {
     if(this->isSelectedOuputDeviceValid)

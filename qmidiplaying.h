@@ -20,6 +20,7 @@ namespace QMIDI{
         void setIsStopRequested(unsigned char AIsStopRequested);
         unsigned char getVolumePercentage();
         void setVolumePercentage(unsigned char AVolumePercentage);
+        unsigned long long getSelectedOuputDeviceIndex();
 
     private:
         wchar_t filename[MAX_PATH];
