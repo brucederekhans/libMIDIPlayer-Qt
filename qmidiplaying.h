@@ -21,6 +21,7 @@ namespace QMIDI{
         unsigned char getVolumePercentage();
         void setVolumePercentage(unsigned char AVolumePercentage);
         unsigned long long getSelectedOuputDeviceIndex();
+        bool getIsSelectedOuputDeviceValid();
 
     private:
         wchar_t filename[MAX_PATH];

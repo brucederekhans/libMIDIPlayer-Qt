@@ -86,6 +86,11 @@ unsigned long long QMIDI::QMIDIPlaying::getSelectedOuputDeviceIndex()
     return this->selectedOuputDeviceIndex;
 }
 
+bool QMIDI::QMIDIPlaying::getIsSelectedOuputDeviceValid()
+{
+    return this->isSelectedOuputDeviceValid;
+}
+
 void QMIDI::QMIDIPlaying::execute()
 {
     if(this->isSelectedOuputDeviceValid)
