@@ -430,10 +430,10 @@ void QMIDI::QMIDIPlaying::execute()
                         midiTrackHeaders[jTrack].pData = nullptr;
                         if(midiTrackHeaders[jTrack].data)
                         {
-                            delete [](midiTrackHeaders[jTrack].data);
+                            delete[] (midiTrackHeaders[jTrack].data);
                         }
                     }
-                    delete []midiTrackHeaders;
+                    delete[] midiTrackHeaders;
                 }
                 catch(int errCode)
                 {
@@ -442,7 +442,7 @@ void QMIDI::QMIDIPlaying::execute()
                         unsigned short jTrack;
                         for(jTrack = 0; jTrack < iTrack; jTrack++)
                         {
-                            delete [](midiTrackHeaders[jTrack].data);
+                            delete[] (midiTrackHeaders[jTrack].data);
                         }
                     }
                     else if(errCode == -8)
@@ -450,10 +450,10 @@ void QMIDI::QMIDIPlaying::execute()
                         unsigned short jTrack;
                         for(jTrack = 0; jTrack < (iTrack + 1); jTrack++)
                         {
-                            delete [](midiTrackHeaders[jTrack].data);
+                            delete[] (midiTrackHeaders[jTrack].data);
                         }
                     }
-                    delete []midiTrackHeaders;
+                    delete[] midiTrackHeaders;
                     throw errCode;
                 }
             }
